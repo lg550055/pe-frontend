@@ -1,23 +1,18 @@
 import axios from 'axios'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-
+import { useState, useEffect } from 'react'
 
 export default function Home() {
 
+  const [estimates, setEstimates] = useState([])
+
   const url = process.env.NEXT_PUBLIC_RESOURCE_URL
 
-  let data = async () => await axios.get(url)
-
-  let d = data()
-  // d.then(e => console.log(e[0].fwd_eps))
-  let r = []
-  d.then(e => {
-    e.data.forEach( k => console.log(k.symbol))
+  useEffect(() => {
+    axios.get(url).then(e => setEstimates(e.data))
   })
-
-  console.log(r.length)
-
+  
   return (
     <div className={styles.container}>
       <Head>
@@ -28,8 +23,8 @@ export default function Home() {
 
       <main className={styles.main}>
         <h2>Hello!</h2>
-        {/* <p>{d.data[0].symbol}</p> */}
-        {/* {d.map(e => <p>e</p>)} */}
+        <h3>Here are the eps estimates</h3>
+        {estimates.map(e => <p key={e.id}>{e.symbol} : {e.fwd_eps}, {e.fwd2_eps}</p>)}
       </main>
 
       <footer className={styles.footer}>
