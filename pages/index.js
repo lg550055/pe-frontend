@@ -22,8 +22,8 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h2>Hello!</h2>
-        <h3>Here are the eps estimates</h3>
+        <h2>Simple eps estimates</h2>
+        <h3>Current eps estimates for 2022 and 2023</h3>
         {estimates.map(e => <p key={e.id}>{e.symbol} : {e.fwd_eps}, {e.fwd2_eps}</p>)}
       </main>
 
