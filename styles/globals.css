@@ -14,3 +14,17 @@ a {
 * {
   box-sizing: border-box;
 }
+
+h4, p {
+  padding: 0;
+  margin: 0.25em;
+}
+
+button {
+  border: none;
+  color: azure;
+  margin: 1em 0;
+  border-radius: 0.75em;
+  padding: 0.5em 2em;
+  background-color: #0070f3;
+}
