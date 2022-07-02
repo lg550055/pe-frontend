@@ -38,7 +38,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h2>Simple eps estimates</h2>
-        <h4>Ticker Price . eps(e) '22, '23 . p/e '22, '23</h4>
+        <h4>Ticker Price . eps(e) 22, 23 . p/e 22, 23</h4>
         { prices && estimates.map(e => <p key={e.id}>{e.symbol} {prices[e.symbol]} . {e.fwd_eps}, {e.fwd2_eps} . {(prices[e.symbol]/e.fwd_eps).toFixed(1)}, {(prices[e.symbol]/e.fwd2_eps).toFixed(1)}</p>)}
         <button onClick={()=>get_prices(estimates)}>Get Current Prices</button>
       </main>
