@@ -1,7 +1,9 @@
-import axios from 'axios'
-import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { useState, useEffect } from 'react'
+import axios from 'axios'
+import Head from 'next/head'
+import Estimates from '../components/estimates'
+
 
 export default function Home() {
 
@@ -22,6 +24,7 @@ export default function Home() {
       }
     })
     setPrices(temp_p)
+    console.log(prices)
   }
 
   useEffect(() => {
@@ -38,13 +41,10 @@ export default function Home() {
 
       <main className={styles.main}>
         <h2>Simple eps estimates</h2>
-        <h4>Ticker Price . eps(e) 22, 23 . p/e 22, 23</h4>
-        { prices && estimates.map(e => <p key={e.id}>{e.symbol} {prices[e.symbol]} . {e.fwd_eps}, {e.fwd2_eps} . {(prices[e.symbol]/e.fwd_eps).toFixed(1)}, {(prices[e.symbol]/e.fwd2_eps).toFixed(1)}</p>)}
+        { prices && <Estimates estimates={estimates} prices={prices} /> }
         <button onClick={()=>get_prices(estimates)}>Get Current Prices</button>
       </main>
-
-      <footer className={styles.footer}>
-      </footer>
+      <footer className={styles.footer}></footer>
     </div>
   )
 }

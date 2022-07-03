@@ -15,9 +15,9 @@ a {
   box-sizing: border-box;
 }
 
-h4, p {
-  padding: 0;
-  margin: 0.25em;
+td {
+  text-align: right;
+  line-height: 1.25em;
 }
 
 button {
