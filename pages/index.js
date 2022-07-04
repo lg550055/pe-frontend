@@ -40,8 +40,9 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h2>Simple eps estimates</h2>
+        <h3>P/E on concensus eps estimates</h3>
         { prices && <Estimates estimates={estimates} prices={prices} /> }
+        <p>r_g22 and 23 = est rev growth</p>
         <button onClick={()=>get_prices(estimates)}>Get Current Prices</button>
       </main>
       <footer className={styles.footer}></footer>
