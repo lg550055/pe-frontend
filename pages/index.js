@@ -24,7 +24,12 @@ export default function Home() {
       }
     })
     setPrices(temp_p)
-    console.log(prices)
+  }
+
+  async function addStock(e) {
+    console.log(e.target.ticker.value)
+    await axios.get(url+`stock?ticker=${e.target.ticker.value}`)
+    e.target.reset()
   }
 
   useEffect(() => {
@@ -44,6 +49,12 @@ export default function Home() {
         { prices && <Estimates estimates={estimates} prices={prices} /> }
         <p>r_g22 and 23 = est rev growth</p>
         <button onClick={()=>get_prices(estimates)}>Get Current Prices</button>
+        <div>
+          <form onSubmit={addStock}>
+            <input placeholder="Enter symbol" name="ticker" />
+            <button>Add stock</button>
+          </form>
+        </div>
       </main>
       <footer className={styles.footer}></footer>
     </div>

@@ -20,6 +20,17 @@ td {
   line-height: 1.25em;
 }
 
+input {
+  margin-right: 0.75em;
+  padding: 0.3em 0;
+  border-radius: 0.75em;
+  border: 2px solid #0070f3;
+  /* font-size: 1.1em; */
+  text-align: center;
+  color: #0070f3;
+  width: 9em;
+}
+
 button {
   border: none;
   color: azure;
