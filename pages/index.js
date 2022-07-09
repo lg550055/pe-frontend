@@ -9,6 +9,15 @@ export default function Home() {
 
   const [estimates, setEstimates] = useState([])
   const [prices, setPrices] = useState({})
+  const [sortedField, setSortedField] = useState(null)
+  let sortedEstimates = [...estimates]
+  if (sortedField != null) {
+    sortedEstimates.sort((a,b) => {
+      if (a[sortedField] < b[sortedField]) return -1;
+      if (a[sortedField] > b[sortedField]) return 1;
+      return 0
+    })
+  }
 
   const url = process.env.NEXT_PUBLIC_RESOURCE_URL
   const token = process.env.NEXT_PUBLIC_TOKEN
@@ -46,7 +55,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h3>P/E on concensus eps estimates</h3>
-        { prices && <Estimates estimates={estimates} prices={prices} /> }
+        { prices && <Estimates estimates={sortedEstimates} sortf={setSortedField} prices={prices} /> }
         <p>r_g22 and 23 = est rev growth</p>
         <button onClick={()=>get_prices(estimates)}>Get Current Prices</button>
         <div>

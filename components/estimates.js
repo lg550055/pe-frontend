@@ -1,11 +1,14 @@
 
-export default function Estimates({ estimates, prices }) {
+export default function Estimates({ estimates, prices, sortf }) {
+  
   return (
     <table>
       <thead>
         <tr>
           <th>Ticker</th>
-          <th>Industry</th>
+          <th>
+            <button onClick={()=>sortf('industry')}>Industry</button>
+          </th>
           <th>Price</th>
           <th>MCap</th>
           <th>TEV</th>
