@@ -5,7 +5,7 @@ export default function Detail({ estimate }) {
     <table>
       <thead>
         <tr>
-          <th>Ticker</th>
+          <th>{estimate.symbol}</th>
           <th>{estimate.date4}</th>
           <th>{estimate.date3}</th>
           <th>{estimate.date2}</th>
@@ -33,8 +33,8 @@ export default function Detail({ estimate }) {
           <td>{estimate.ebitda2}</td>
           <td>{estimate.ebitda1}</td>
           <td>{estimate.trail_ebitda}</td>
-          <td>{1}</td>
-          <td>{2}</td>
+          <td>{}</td>
+          <td>{}</td>
         </tr>
         <tr key={1002}>
           <th>CFO</th>
@@ -43,8 +43,8 @@ export default function Detail({ estimate }) {
           <td>{estimate.cfo2}</td>
           <td>{estimate.cfo1}</td>
           <td>{estimate.trail_cfo}</td>
-          <td>{1}</td>
-          <td>{2}</td>
+          <td>{}</td>
+          <td>{}</td>
         </tr>
         <tr key={1003}>
           <th>Capex</th>
@@ -53,8 +53,8 @@ export default function Detail({ estimate }) {
           <td>{estimate.capex2}</td>
           <td>{estimate.capex1}</td>
           <td>{estimate.trail_capex}</td>
-          <td>{1}</td>
-          <td>{2}</td>
+          <td>{}</td>
+          <td>{}</td>
         </tr>
         <tr key={1004}>
           <th>EPS</th>
