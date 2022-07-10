@@ -1,5 +1,5 @@
 
-export default function Deatil({ estimate }) {
+export default function Detail({ estimate }) {
   
   return (
     <table>
@@ -24,7 +24,7 @@ export default function Deatil({ estimate }) {
           <td>{estimate.rev1}</td>
           <td>{estimate.trail_rev}</td>
           <td>{estimate.fwd_rev}</td>
-          <td>{estimate.fwd2_rev}%</td>
+          <td>{estimate.fwd2_rev}</td>
         </tr>
         <tr key={1001}>
           <th>Ebitda</th>
@@ -34,7 +34,7 @@ export default function Deatil({ estimate }) {
           <td>{estimate.ebitda1}</td>
           <td>{estimate.trail_ebitda}</td>
           <td>{1}</td>
-          <td>{2}%</td>
+          <td>{2}</td>
         </tr>
         <tr key={1002}>
           <th>CFO</th>
@@ -44,7 +44,7 @@ export default function Deatil({ estimate }) {
           <td>{estimate.cfo1}</td>
           <td>{estimate.trail_cfo}</td>
           <td>{1}</td>
-          <td>{2}%</td>
+          <td>{2}</td>
         </tr>
         <tr key={1003}>
           <th>Capex</th>
@@ -54,7 +54,7 @@ export default function Deatil({ estimate }) {
           <td>{estimate.capex1}</td>
           <td>{estimate.trail_capex}</td>
           <td>{1}</td>
-          <td>{2}%</td>
+          <td>{2}</td>
         </tr>
         <tr key={1004}>
           <th>EPS</th>
@@ -64,7 +64,7 @@ export default function Deatil({ estimate }) {
           <td>{estimate.eps1}</td>
           <td></td>
           <td>{estimate.fwd_eps}</td>
-          <td>{estimate.fwd2_eps}%</td>
+          <td>{estimate.fwd2_eps}</td>
         </tr>
       </tbody>
     </table>

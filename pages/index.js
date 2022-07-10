@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Head from 'next/head'
 import Estimates from '../components/estimates'
-import Estimate from '../components/detail'
+import Detail from '../components/detail'
 
 
 export default function Home() {
@@ -58,8 +58,8 @@ export default function Home() {
 
       <main className={styles.main}>
         <h3>P/E on concensus eps estimates</h3>
-        { estimate && <Estimate /> }
-        { prices && <Estimates estimates={sortedEstimates} sortf={setSortedField} prices={prices} /> }
+        { estimate && <Detail estimate={estimate} /> }
+        { prices && <Estimates estimates={sortedEstimates} sortf={setSortedField} loadit={setEstimate} prices={prices} /> }
         <p>Note: r_g22 and 23 = est rev growth, T/ebitda: TEV/ttm ebitda, T/e-cpx: TEV/ttm ebitda-capex</p>
         <button onClick={()=>get_prices(estimates)}>Get Current Prices</button>
         <div>
