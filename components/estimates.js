@@ -23,8 +23,8 @@ export default function Estimates({ estimates, prices, sortf }) {
         </tr>
       </thead>
       <tbody>
-        {estimates.map(e => 
-          <tr key={e.id}>
+        {estimates.map((e,i) => 
+          <tr key={e.id} bgcolor={i%2 ? '#222' : 'transparent'}>
             <th>{e.symbol}</th>
             <td>{e.industry ? e.industry.slice(0,11) : null}</td>
             <td>{prices[e.symbol]}</td>

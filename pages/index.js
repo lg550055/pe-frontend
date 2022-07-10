@@ -56,7 +56,7 @@ export default function Home() {
       <main className={styles.main}>
         <h3>P/E on concensus eps estimates</h3>
         { prices && <Estimates estimates={sortedEstimates} sortf={setSortedField} prices={prices} /> }
-        <p>r_g22 and 23 = est rev growth</p>
+        <p>Note: r_g22 and 23 = est rev growth, T/ebitda: TEV/ttm ebitda, T/e-cpx: TEV/ttm ebitda-capex</p>
         <button onClick={()=>get_prices(estimates)}>Get Current Prices</button>
         <div>
           <form onSubmit={addStock}>
