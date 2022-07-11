@@ -23,7 +23,7 @@ table {
 }
 
 thead th {
-  border-bottom: 2px solid #0070f3;
+  border-bottom: 1px solid #0070f3;
   padding: 0.25em 0.2em;
 }
 
@@ -63,5 +63,6 @@ button {
 button:hover {background-color: silver;}
 
 p {
+  color: grey;
   font-size: small;
 }

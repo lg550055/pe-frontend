@@ -3,19 +3,19 @@ export default function Detail({ e, close }) {
   
   return (
     <table>
-      <caption>{e.symbol} summary financials &nbsp; &nbsp;
+      <caption><strong>{e.symbol} summary financials</strong> &nbsp; &nbsp;
         <button onClick={()=>close()}>X</button>
       </caption>
       <thead>
         <tr>
           <th></th>
-          <th>{e.date4}</th>
-          <th>{e.date3}</th>
-          <th>{e.date2}</th>
-          <th>{e.date1}</th>
-          <th>{e.trail_date}</th>
-          <th>fw1</th>
-          <th>fw2</th>
+          <th>{e.date4.slice(0,6)}a</th>
+          <th>{e.date3.slice(0,6)}a</th>
+          <th>{e.date2.slice(0,6)}a</th>
+          <th>{e.date1.slice(0,6)}a</th>
+          <th>ttm{e.trail_date.slice(0,6)}</th>
+          <th>{Math.floor(e.date1/100)+100}e</th>
+          <th>{Math.floor(e.date1/100)+200}e</th>
         </tr>
       </thead>
       <tbody>
@@ -29,8 +29,8 @@ export default function Detail({ e, close }) {
           <td>{e.fwd_rev}</td>
           <td>{e.fwd2_rev}</td>
         </tr>
-        <tr key={1001}>
-          <th>rev growth</th>
+        <tr key={1001} bgcolor='white'>
+          <th><em>rev growth</em></th>
           <td></td>
           <td>{((e.rev3/e.rev4-1)*100).toFixed(1)}%</td>
           <td>{((e.rev2/e.rev3-1)*100).toFixed(1)}%</td>
@@ -49,8 +49,8 @@ export default function Detail({ e, close }) {
           <td>{}</td>
           <td>{}</td>
         </tr>
-        <tr key={1003}>
-          <th>ebitda mgn</th>
+        <tr key={1003} bgcolor='white'>
+          <th><em>ebitda mgn</em></th>
           <td>{(e.ebitda4/e.rev4*100).toFixed(1)}%</td>
           <td>{(e.ebitda3/e.rev3*100).toFixed(1)}%</td>
           <td>{(e.ebitda2/e.rev2*100).toFixed(1)}%</td>
@@ -69,7 +69,7 @@ export default function Detail({ e, close }) {
           <td>{}</td>
           <td>{}</td>
         </tr>
-        <tr key={1006}>
+        <tr key={1006} bgcolor='white'>
           <th>Capex</th>
           <td>{e.capex4}</td>
           <td>{e.capex3}</td>
@@ -89,8 +89,8 @@ export default function Detail({ e, close }) {
           <td></td>
           <td></td>
         </tr>
-        <tr key={1009}>
-          <th>ndebt/e-c</th>
+        <tr key={1009} bgcolor='white'>
+          <th><em>ndebt/e-c</em></th>
           <td>{(e.ndebt4/(e.ebitda4-e.capex4)).toFixed(1)}x</td>
           <td>{(e.ndebt3/(e.ebitda3-e.capex3)).toFixed(1)}x</td>
           <td>{(e.ndebt2/(e.ebitda2-e.capex2)).toFixed(1)}x</td>

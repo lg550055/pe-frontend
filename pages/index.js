@@ -56,25 +56,27 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Simplified</title>
+        <title>Stock valuation simplified</title>
         <meta name="description" content="Front end deployment test" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-        <h3>P/E on concensus eps estimates</h3>
+        <h3>Valuation on concensus rev and eps estimates</h3>
         { estimate && <Detail e={estimate} close={setEstimate} /> }
         { prices && <Estimates estimates={sortedEstimates} sortf={setSortedField} loadit={setEstimate} prices={prices} dels={delStock} /> }
-        <p>Note: r_g22 and 23 = est rev growth, T/ebitda: TEV/ttm ebitda, T/e-cpx: TEV/ttm ebitda-capex</p>
-        <button onClick={()=>get_prices(estimates)}>Get Current Prices</button>
+        <button onClick={()=>get_prices(estimates)}>Get current prices</button>
         <div>
           <form onSubmit={addStock}>
             <input placeholder="Enter symbol" name="ticker" />
             <button>Add stock</button>
           </form>
         </div>
+        <p>Note: r_g22 and 23 = est rev growth, T/ebitda: TEV/ttm ebitda, T/e-cpx: TEV/ttm ebitda-capex</p>
       </main>
-      <footer className={styles.footer}></footer>
+      <footer className={styles.footer}>
+        <p>GoodHacker &copy; 2022</p>
+      </footer>
     </div>
   )
 }
