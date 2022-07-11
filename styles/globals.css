@@ -1,6 +1,6 @@
 html,
 body {
-  background-color: black;
+  background-color: mintcream;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -17,26 +17,23 @@ a {
 }
 
 table {
+  margin: 1em 0;
   font-size: smaller;
   border-collapse: collapse;
 }
 
 thead th {
-  background-color: #0070f3;
+  border-bottom: 2px solid #0070f3;
   padding: 0.25em 0.2em;
-  color: #222;
 }
 
 table button {
   background-color: transparent;
   text-decoration: underline;
+  font-weight: inherit;
   color: inherit;
   padding: 0.2em;
   margin: 0;
-}
-
-th {
-  font-weight: normal;
 }
 
 td {
@@ -63,7 +60,7 @@ button {
   padding: 0.5em 2em;
   background-color: #0070f3;
 }
-button:hover {background-color: green;}
+button:hover {background-color: silver;}
 
 p {
   font-size: small;

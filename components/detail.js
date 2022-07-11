@@ -8,7 +8,7 @@ export default function Detail({ e, close }) {
       </caption>
       <thead>
         <tr>
-          <th>{e.symbol}</th>
+          <th></th>
           <th>{e.date4}</th>
           <th>{e.date3}</th>
           <th>{e.date2}</th>
@@ -30,7 +30,7 @@ export default function Detail({ e, close }) {
           <td>{e.fwd2_rev}</td>
         </tr>
         <tr key={1001}>
-          <th>rev g</th>
+          <th>rev growth</th>
           <td></td>
           <td>{((e.rev3/e.rev4-1)*100).toFixed(1)}%</td>
           <td>{((e.rev2/e.rev3-1)*100).toFixed(1)}%</td>
@@ -90,7 +90,7 @@ export default function Detail({ e, close }) {
           <td></td>
         </tr>
         <tr key={1009}>
-          <th>nDebt/e-c</th>
+          <th>ndebt/e-c</th>
           <td>{(e.ndebt4/(e.ebitda4-e.capex4)).toFixed(1)}x</td>
           <td>{(e.ndebt3/(e.ebitda3-e.capex3)).toFixed(1)}x</td>
           <td>{(e.ndebt2/(e.ebitda2-e.capex2)).toFixed(1)}x</td>
