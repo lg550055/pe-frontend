@@ -44,7 +44,9 @@ export default function Home() {
   }
 
   async function delStock(e) {
-    await axios.delete(url + e.id)
+    if (confirm(`Are you sure you want to delete ${e.symbol}?`)) {
+      await axios.delete(url + e.id)
+    }
   }
 
   useEffect(() => {
