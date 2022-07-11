@@ -90,6 +90,16 @@ export default function Detail({ e, close }) {
           <td></td>
         </tr>
         <tr key={1009}>
+          <th>nDebt/e-c</th>
+          <td>{(e.ndebt4/(e.ebitda4-e.capex4)).toFixed(1)}x</td>
+          <td>{(e.ndebt3/(e.ebitda3-e.capex3)).toFixed(1)}x</td>
+          <td>{(e.ndebt2/(e.ebitda2-e.capex2)).toFixed(1)}x</td>
+          <td>{(e.ndebt1/(e.ebitda1-e.capex1)).toFixed(1)}x</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr key={1010}>
           <th>EPS</th>
           <td>{e.eps4}</td>
           <td>{e.eps3}</td>
