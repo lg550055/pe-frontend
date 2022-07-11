@@ -30,7 +30,7 @@ export default function Estimates({ estimates, prices, sortf, loadit, dels }) {
               <button onClick={()=>loadit(e)}>{e.symbol}</button>
             </th>
             <td>{e.industry ? e.industry.slice(0,11) : null}</td>
-            <td>{prices[e.symbol].toFixed(2)}</td>
+            <td>{(prices[e.symbol]*1).toFixed(2)}</td>
             <td>{(prices[e.symbol]*e.shrs_out).toFixed()}</td>
             <td>{e.ndebt1 ? (prices[e.symbol]*e.shrs_out + e.ndebt1*1).toFixed() : null}</td>
             {/* <td>{e.fwd_eps}</td> */}
