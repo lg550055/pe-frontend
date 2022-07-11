@@ -109,6 +109,16 @@ export default function Detail({ e, close }) {
           <td>{e.fwd_eps}</td>
           <td>{e.fwd2_eps}</td>
         </tr>
+        <tr key={1011} bgcolor='white'>
+          <th><em>EPS growth</em></th>
+          <td></td>
+          <td>{((e.eps3/e.eps4-1)*100).toFixed(1)}%</td>
+          <td>{((e.eps2/e.eps3-1)*100).toFixed(1)}%</td>
+          <td>{((e.eps1/e.eps2-1)*100).toFixed(1)}%</td>
+          <td></td>
+          <td>{((e.fwd_eps/e.eps1-1)*100).toFixed(1)}%</td>
+          <td>{((e.fwd2_eps/e.fwd_eps-1)*100).toFixed(1)}%</td>
+        </tr>
       </tbody>
     </table>
   )
