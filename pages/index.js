@@ -39,9 +39,12 @@ export default function Home() {
   }
 
   async function addStock(e) {
-    console.log(e.target.ticker.value)
     await axios.get(url+`stock?ticker=${e.target.ticker.value}`)
     e.target.reset()
+  }
+
+  async function delStock(e) {
+    await axios.delete(url + e.id)
   }
 
   useEffect(() => {
@@ -59,7 +62,7 @@ export default function Home() {
       <main className={styles.main}>
         <h3>P/E on concensus eps estimates</h3>
         { estimate && <Detail e={estimate} close={setEstimate} /> }
-        { prices && <Estimates estimates={sortedEstimates} sortf={setSortedField} loadit={setEstimate} prices={prices} /> }
+        { prices && <Estimates estimates={sortedEstimates} sortf={setSortedField} loadit={setEstimate} prices={prices} dels={delStock} /> }
         <p>Note: r_g22 and 23 = est rev growth, T/ebitda: TEV/ttm ebitda, T/e-cpx: TEV/ttm ebitda-capex</p>
         <button onClick={()=>get_prices(estimates)}>Get Current Prices</button>
         <div>

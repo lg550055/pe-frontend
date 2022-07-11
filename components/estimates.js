@@ -1,5 +1,5 @@
 
-export default function Estimates({ estimates, prices, sortf, loadit }) {
+export default function Estimates({ estimates, prices, sortf, loadit, dels }) {
   
   return (
     <table>
@@ -20,6 +20,7 @@ export default function Estimates({ estimates, prices, sortf, loadit }) {
           <th>p/e23</th>
           <th>T/ebitda</th>
           <th>T/e-cpx</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -40,6 +41,7 @@ export default function Estimates({ estimates, prices, sortf, loadit }) {
             <td>{(prices[e.symbol]/e.fwd2_eps).toFixed(1)}</td>
             <td>{e.ndebt1 ? ((prices[e.symbol]*e.shrs_out + e.ndebt1*1)/e.trail_ebitda).toFixed(1) : null}</td>
             <td>{e.ndebt1 ? ((prices[e.symbol]*e.shrs_out + e.ndebt1*1)/(e.trail_ebitda-e.trail_capex)).toFixed(1) : null}</td>
+            <td><button onClick={()=>dels(e)}>X</button></td>
           </tr>
         )}
       </tbody>

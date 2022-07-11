@@ -4,7 +4,7 @@ export default function Detail({ e, close }) {
   return (
     <table>
       <caption>{e.symbol} summary financials &nbsp; &nbsp;
-        <button onClick={()=>close()}>&#9747;</button>
+        <button onClick={()=>close()}>X</button>
       </caption>
       <thead>
         <tr>
