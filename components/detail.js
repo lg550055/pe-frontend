@@ -1,16 +1,19 @@
 
-export default function Detail({ estimate }) {
+export default function Detail({ e, close }) {
   
   return (
     <table>
+      <caption>{e.symbol} summary financials &nbsp; &nbsp;
+        <button onClick={()=>close()}>&#9747;</button>
+      </caption>
       <thead>
         <tr>
-          <th>{estimate.symbol}</th>
-          <th>{estimate.date4}</th>
-          <th>{estimate.date3}</th>
-          <th>{estimate.date2}</th>
-          <th>{estimate.date1}</th>
-          <th>{estimate.trail_date}</th>
+          <th>{e.symbol}</th>
+          <th>{e.date4}</th>
+          <th>{e.date3}</th>
+          <th>{e.date2}</th>
+          <th>{e.date1}</th>
+          <th>{e.trail_date}</th>
           <th>fw1</th>
           <th>fw2</th>
         </tr>
@@ -18,53 +21,83 @@ export default function Detail({ estimate }) {
       <tbody>
         <tr key={1000}>
           <th>Revenue</th>
-          <td>{estimate.rev4}</td>
-          <td>{estimate.rev3}</td>
-          <td>{estimate.rev2}</td>
-          <td>{estimate.rev1}</td>
-          <td>{estimate.trail_rev}</td>
-          <td>{estimate.fwd_rev}</td>
-          <td>{estimate.fwd2_rev}</td>
+          <td>{e.rev4}</td>
+          <td>{e.rev3}</td>
+          <td>{e.rev2}</td>
+          <td>{e.rev1}</td>
+          <td>{e.trail_rev}</td>
+          <td>{e.fwd_rev}</td>
+          <td>{e.fwd2_rev}</td>
         </tr>
         <tr key={1001}>
-          <th>Ebitda</th>
-          <td>{estimate.ebitda4}</td>
-          <td>{estimate.ebitda3}</td>
-          <td>{estimate.ebitda2}</td>
-          <td>{estimate.ebitda1}</td>
-          <td>{estimate.trail_ebitda}</td>
-          <td>{}</td>
-          <td>{}</td>
+          <th>rev g</th>
+          <td></td>
+          <td>{((e.rev3/e.rev4-1)*100).toFixed(1)}%</td>
+          <td>{((e.rev2/e.rev3-1)*100).toFixed(1)}%</td>
+          <td>{((e.rev1/e.rev2-1)*100).toFixed(1)}%</td>
+          <td></td>
+          <td>{(e.fwd_rev_g*100).toFixed(1)}%</td>
+          <td>{(e.fwd2_rev_g*100).toFixed(1)}%</td>
         </tr>
         <tr key={1002}>
-          <th>CFO</th>
-          <td>{estimate.cfo4}</td>
-          <td>{estimate.cfo3}</td>
-          <td>{estimate.cfo2}</td>
-          <td>{estimate.cfo1}</td>
-          <td>{estimate.trail_cfo}</td>
+          <th>Ebitda</th>
+          <td>{e.ebitda4}</td>
+          <td>{e.ebitda3}</td>
+          <td>{e.ebitda2}</td>
+          <td>{e.ebitda1}</td>
+          <td>{e.trail_ebitda}</td>
           <td>{}</td>
           <td>{}</td>
         </tr>
         <tr key={1003}>
-          <th>Capex</th>
-          <td>{estimate.capex4}</td>
-          <td>{estimate.capex3}</td>
-          <td>{estimate.capex2}</td>
-          <td>{estimate.capex1}</td>
-          <td>{estimate.trail_capex}</td>
+          <th>ebitda mgn</th>
+          <td>{(e.ebitda4/e.rev4*100).toFixed(1)}%</td>
+          <td>{(e.ebitda3/e.rev3*100).toFixed(1)}%</td>
+          <td>{(e.ebitda2/e.rev2*100).toFixed(1)}%</td>
+          <td>{(e.ebitda1/e.rev1*100).toFixed(1)}%</td>
+          <td>{(e.trail_ebitda/e.trail_rev*100).toFixed(1)}%</td>
           <td>{}</td>
           <td>{}</td>
         </tr>
         <tr key={1004}>
-          <th>EPS</th>
-          <td>{estimate.eps4}</td>
-          <td>{estimate.eps3}</td>
-          <td>{estimate.eps2}</td>
-          <td>{estimate.eps1}</td>
+          <th>CFO</th>
+          <td>{e.cfo4}</td>
+          <td>{e.cfo3}</td>
+          <td>{e.cfo2}</td>
+          <td>{e.cfo1}</td>
+          <td>{e.trail_cfo}</td>
+          <td>{}</td>
+          <td>{}</td>
+        </tr>
+        <tr key={1006}>
+          <th>Capex</th>
+          <td>{e.capex4}</td>
+          <td>{e.capex3}</td>
+          <td>{e.capex2}</td>
+          <td>{e.capex1}</td>
+          <td>{e.trail_capex}</td>
+          <td>{}</td>
+          <td>{}</td>
+        </tr>
+        <tr key={1008}>
+          <th>Net debt</th>
+          <td>{e.ndebt4}</td>
+          <td>{e.ndebt3}</td>
+          <td>{e.ndebt2}</td>
+          <td>{e.ndebt1}</td>
           <td></td>
-          <td>{estimate.fwd_eps}</td>
-          <td>{estimate.fwd2_eps}</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr key={1009}>
+          <th>EPS</th>
+          <td>{e.eps4}</td>
+          <td>{e.eps3}</td>
+          <td>{e.eps2}</td>
+          <td>{e.eps1}</td>
+          <td></td>
+          <td>{e.fwd_eps}</td>
+          <td>{e.fwd2_eps}</td>
         </tr>
       </tbody>
     </table>
