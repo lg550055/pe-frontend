@@ -1,8 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Stock Valuation Simplified
 
-## Getting Started
+### What is unique about this web app?
 
-First, run the development server:
+Provides a simple interface where a custom list of stocks can be compared on forward p/e and ebitda valuation metrics.
+
+It also provides, in the same page, the historical and projected financials for the relevant valuation metrics.
+
+I haven't found another site that has this functionality.
+
+### Architecture
+
+Front-end:  React / Next.js
+Back-end: Django Rest Framework, PostgreSQL
+
+### How to run locally?
+
+Run the development server:
 
 ```bash
 npm run dev
@@ -10,5 +23,4 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
+ThenOpen [http://localhost:3000](http://localhost:3000) with your browser to see the result.
