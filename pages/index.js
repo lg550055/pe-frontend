@@ -1,4 +1,3 @@
-import styles from '../styles/Home.module.css'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Head from 'next/head'
@@ -54,15 +53,16 @@ export default function Home() {
   })
   
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Stock valuation simplified</title>
         <meta name="description" content="Front end deployment test" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
+      <main>
         <h3>Valuation on concensus rev and eps estimates</h3>
+        <h4>Click on a ticker to see estimate details</h4>
         { estimate && <Detail e={estimate} close={setEstimate} /> }
         { prices && <Estimates estimates={sortedEstimates} sortf={setSortedField} loadit={setEstimate} prices={prices} dels={delStock} /> }
         <button onClick={()=>get_prices(estimates)}>Get current prices</button>
@@ -74,7 +74,7 @@ export default function Home() {
         </div>
         <p>Note: r_g22 and 23 = est rev growth, T/ebitda: TEV/ttm ebitda, T/e-cpx: TEV/ttm ebitda-capex</p>
       </main>
-      <footer className={styles.footer}>
+      <footer>
         <p>GoodHacker &copy; 2022</p>
       </footer>
     </div>

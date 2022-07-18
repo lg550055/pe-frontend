@@ -1,4 +1,3 @@
-html,
 body {
   background-color: mintcream;
   padding: 0;
@@ -7,17 +6,20 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
+main {
+  min-height: 100vh;
+  /* padding: 4rem 0; */
+  /* flex: 1; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #0070f3;
 }
 
 table {
   margin: 1em 0;
+  max-height: 80vh; overflow: auto;
   font-size: smaller;
   border-collapse: collapse;
 }
@@ -53,6 +55,11 @@ input {
   width: 9em;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 button {
   border: none;
   color: azure;
@@ -66,4 +73,8 @@ button:hover {background-color: silver;}
 p {
   color: grey;
   font-size: small;
+  text-align: center;
 }
+
+h3 {margin: 0;}
+h4 {margin: 0;}
