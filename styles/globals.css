@@ -2,33 +2,36 @@ body {
   background-color: mintcream;
   padding: 0;
   margin: 0;
+  text-align: center;
+  color: darkslategray;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 main {
   min-height: 100vh;
-  /* padding: 4rem 0; */
-  /* flex: 1; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #0070f3;
 }
 
 table {
   margin: 1em 0;
-  max-height: 80vh; overflow: auto;
   font-size: smaller;
   border-collapse: collapse;
+  box-shadow: 4px 4px 4px #0070f3;
 }
 
 thead th {
-  border-bottom: 1px solid #0070f3;
+  background-color: darkslategray;
+  font-weight: normal;
   padding: 0.25em 0.2em;
+  color: mintcream;
 }
-
+tbody th {
+  text-align: left;
+}
 table button {
   background-color: transparent;
   text-decoration: underline;
@@ -49,7 +52,6 @@ input {
   padding: 0.3em 0;
   border-radius: 0.75em;
   border: 2px solid #0070f3;
-  /* font-size: 1.1em; */
   text-align: center;
   color: #0070f3;
   width: 9em;
@@ -62,7 +64,7 @@ a {
 
 button {
   border: none;
-  color: azure;
+  color: mintcream;
   margin: 1em 0;
   border-radius: 0.75em;
   padding: 0.5em 2em;
@@ -70,11 +72,13 @@ button {
 }
 button:hover {background-color: silver;}
 
-p {
-  color: grey;
-  font-size: small;
-  text-align: center;
+caption {
+  font-size: larger;
+  font-weight: bold;
+  padding: 0.3vh 0;
 }
 
-h3 {margin: 0;}
-h4 {margin: 0;}
+p {font-size: small; color: gray;}
+
+h2 {margin: 1vh; }
+h4 {margin: 0; font-weight: normal;}

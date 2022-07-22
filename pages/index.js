@@ -56,13 +56,12 @@ export default function Home() {
     <div>
       <Head>
         <title>Stock valuation simplified</title>
-        <meta name="description" content="Front end deployment test" />
+        <meta name="description" content="Stock valuation on concensus estimates" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <main>
-        <h3>Valuation on concensus rev and eps estimates</h3>
-        <h4>Click on a ticker to see estimate details</h4>
+        <h2>Stock Valuation on Concensus<br></br>Revenue and Eps Estimates</h2>
+        <h4>Click ticker to see estimate details; US$b</h4>
         { estimate && <Detail e={estimate} close={setEstimate} /> }
         { prices && <Estimates estimates={sortedEstimates} sortf={setSortedField} loadit={setEstimate} prices={prices} dels={delStock} /> }
         <button onClick={()=>get_prices(estimates)}>Get current prices</button>
